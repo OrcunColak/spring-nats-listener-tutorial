@@ -22,6 +22,8 @@ public class NatsSubscriber {
         // Subject to subscribe to
         String subject = "mySubject";
 
+        // Asynchronous subscriptions require a Dispatcher. The Dispatcher contains the thread that gives incoming messages
+        // to the asynchronous handler.
         // Create a Dispatcher to handle incoming messages
         Dispatcher dispatcher = natsConnection.createDispatcher(NatsSubscriber::processMessage);
 
